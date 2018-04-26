@@ -16,10 +16,10 @@ from werkzeug import parse_date
 
 from flask import Flask, g, session, request, flash, redirect, jsonify, url_for
 
-from flaskext.babel import Babel, gettext as _
-from flaskext.themes import setup_themes
-from flaskext.principal import Principal, RoleNeed, UserNeed, identity_loaded
-from flaskext.uploads import configure_uploads
+from flask_babel import Babel, gettext as _
+from flask_themes import setup_themes
+from flask_principal import Principal, RoleNeed, UserNeed, identity_loaded
+from flask_uploads import configure_uploads
 
 from pypress import views, helpers
 from pypress.models import User, Post, Tag, Link, Comment
@@ -223,7 +223,7 @@ def configure_errorhandlers(app):
 def configure_modules(app, modules):
     
     for module, url_prefix in modules:
-        app.register_module(module, url_prefix=url_prefix)
+        app.register_blueprint(module, url_prefix=url_prefix)
 
 
 def configure_logging(app):

@@ -14,9 +14,9 @@ from werkzeug import cached_property
 
 from flask import abort, current_app, url_for, Markup
 
-from flaskext.babel import gettext as _
-from flaskext.sqlalchemy import BaseQuery
-from flaskext.principal import RoleNeed, UserNeed, Permission
+from flask_babel import gettext as _
+from flask_sqlalchemy import BaseQuery
+from flask_principal import RoleNeed, UserNeed, Permission
 
 from pypress import signals
 from pypress.helpers import storage, slugify, markdown

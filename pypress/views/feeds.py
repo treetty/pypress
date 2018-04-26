@@ -11,13 +11,13 @@ import os
 
 from werkzeug.contrib.atom import AtomFeed
 
-from flask import Module, request, url_for
+from flask import Blueprint, request, url_for
 
 from pypress.helpers import cached
 
 from pypress.models import User, Post, Tag
 
-feeds = Module(__name__)
+feeds = Blueprint('feeds', __name__)
 
 class PostFeed(AtomFeed):
 

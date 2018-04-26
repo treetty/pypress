@@ -14,8 +14,8 @@ from werkzeug import cached_property
 
 from flask import abort, current_app
 
-from flaskext.sqlalchemy import BaseQuery
-from flaskext.principal import RoleNeed, UserNeed, Permission
+from flask_sqlalchemy import BaseQuery
+from flask_principal import RoleNeed, UserNeed, Permission
 
 from pypress.extensions import db, cache
 from pypress.permissions import admin
@@ -35,7 +35,7 @@ class UserQuery(BaseQuery):
         """
 
         try:
-            user = self.get(int(identity.name))
+            user = self.get(int(identity.id))
         except ValueError:
             user = None
 

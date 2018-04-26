@@ -7,9 +7,9 @@
 
     :license: BSD, see LICENSE for more details.
 """
-from flaskext.wtf import regexp
+from wtforms.validators import regexp
 
-from flaskext.babel import lazy_gettext as _
+from flask_babel import lazy_gettext as _
 
 USERNAME_RE = r'^[\w.+-]+$'
 
